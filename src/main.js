@@ -12,6 +12,14 @@ import 'highlight.js/styles/atom-one-dark.css'
 import VueClipboard from 'vue-clipboard2'
 import Vuep from 'vuep-plus'
 import 'vuep-plus/dist/vuep.css'
+import 'brace'
+import 'brace/mode/html'
+import 'brace/theme/github'
+import 'brace/theme/monokai'
+import 'brace/ext/emmet'
+require(['emmet/emmet'], function (data) { // this is huge. so require it async is better
+  window.emmet = data.emmet
+})
 import('./routes').then(routes => {
   const routeArray = routes.default
   Vue.use(Vuep)
